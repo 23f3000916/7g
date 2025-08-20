@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quarterly Earnings — Interactive Reveal.js Presentation</title>
+
+  <!-- Reveal.js from CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4/dist/theme/white.css" id="theme">
+
+  <!-- Highlight.js for code syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+
+  <style>
+    /* Small styling touches for professional look */
+    .slide-email { position: absolute; right: 1rem; bottom: 1rem; font-size: 0.9rem; opacity: 0.75; }
+    .financial-formula { font-size: 1.05rem; }
+    pre code { font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Title slide -->
+      <section>
+        <h1>Quarterly Earnings Report</h1>
+        <p class="fragment">Modern interactive presentation for stakeholders</p>
+        <p class="slide-email">Contact: 23f3000916@ds.study.iitm.ac.in</p>
+        <aside class="notes">Start with a brief welcome and outline the agenda. Mention that the deck is interactive and contains speaker notes and code snippets for transparency.</aside>
+      </section>
+
+      <!-- Markdown slide (uses Reveal's Markdown plugin) -->
+      <section data-markdown>
+        <textarea data-template>
+## Executive Summary
+
+- **Revenue:** +8% QoQ
+- **Operating Margin:** 12.4%
+- **Guidance:** On track for FY targets
+
+> *Key point:* Focus on client retention and cost discipline.
+
+</textarea>
+        <aside class="notes">Summarize major takeaways in plain language for non-technical stakeholders. Keep it high level.</aside>
+      </section>
+
+      <!-- Slide with animated fragments -->
+      <section>
+        <h2>Highlights</h2>
+        <ul>
+          <li class="fragment">Revenue growth driven by Product A</li>
+          <li class="fragment">Client churn improved by 0.7pp</li>
+          <li class="fragment">One-time restructuring cost reduced</li>
+        </ul>
+        <aside class="notes">Reveal fragments one-by-one while explaining cause/effect.</aside>
+      </section>
+
+      <!-- Slide with code sample and syntax highlighting -->
+      <section>
+        <h2>Reproducible Calculation (Python)</h2>
+        <pre><code class="language-python"># Net Income reconciliation
+revenue = 125_000_000
+cogs = 52_000_000
+opex = 30_000_000
+other = 3_500_000
+net_income = revenue - cogs - opex - other
+print(f"Net income: ${net_income:,}")
+</code></pre>
+        <aside class="notes">Walk through the code quickly; show stakeholders how numbers map to P&L line items. Explain rounding and assumptions.</aside>
+      </section>
+
+      <!-- Slide with math (financial formula) -->
+      <section>
+        <h2>Key Financial Formula</h2>
+        <p class="financial-formula">Return on Equity (ROE):</p>
+        <p class="fragment">\[ \mathrm{ROE} = \dfrac{\mathrm{Net\ Income}}{\mathrm{Shareholders'\ Equity}} \times 100\% \]</p>
+        <p class="fragment">Example: if Net Income = $10m and Equity = $80m, ROE = 12.5%.</p>
+        <aside class="notes">Explain that ROE shows capital efficiency. Use the real company numbers when presenting.</aside>
+      </section>
+
+      <!-- Slide demonstrating an animated chart placeholder (can be replaced by actual chart) -->
+      <section>
+        <h2>Quarterly Revenue Trend</h2>
+        <p class="fragment">(Interactive chart placeholder — embed a live chart or PowerBI dashboard in production)</p>
+        <aside class="notes">If presenting live, switch to the embedded dashboard. Otherwise, describe the trend: seasonality, one-off events.</aside>
+      </section>
+
+      <!-- Closing slide with action items and contact -->
+      <section>
+        <h2>Next Steps & Contacts</h2>
+        <ol>
+          <li class="fragment">Finalize FY guidance</li>
+          <li class="fragment">Deep-dive on Product A profitability</li>
+          <li class="fragment">Board review scheduled next month</li>
+        </ol>
+        <p class="slide-email fragment">For follow-up: 23f3000916@ds.study.iitm.ac.in</p>
+        <aside class="notes">End with clear asks and who owns them. Offer to send the reproducible notebook after the meeting.</aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js and plugins -->
+  <script src="https://unpkg.com/reveal.js@4/dist/reveal.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script>
+    // Initialize Reveal
+    const deck = new Reveal({
+      hash: true,
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ],
+      math: {
+        // MathJax config (Reveal math plugin relies on MathJax from CDN)
+        mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js'
+      }
+    });
+    deck.initialize();
+  </script>
+
+  <!-- Plugins (loaded after Reveal to ensure globals are available) -->
+  <script src="https://unpkg.com/reveal.js@4/plugin/markdown/markdown.esm.js"></script>
+  <script src="https://unpkg.com/reveal.js@4/plugin/highlight/highlight.esm.js"></script>
+  <script src="https://unpkg.com/reveal.js@4/plugin/notes/notes.esm.js"></script>
+  <script src="https://unpkg.com/reveal.js@4/plugin/math/math.esm.js"></script>
+
+</body>
+</html>
